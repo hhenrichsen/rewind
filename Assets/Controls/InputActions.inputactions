@@ -19,7 +19,7 @@
                     "id": "c1f7bec7-43df-4de5-a637-046d2be16847",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press"
+                    "interactions": ""
                 },
                 {
                     "name": "Camera Toggle",

@@ -26,6 +26,8 @@ public class CharacterController : MonoBehaviour
     private CapsuleCollider capCollider;
     [SerializeField]
     private float jumpDist = 1f;
+    [SerializeField]
+    private Collider interactCollider;
 
     public Transform cameraTarget;
 
@@ -77,6 +79,7 @@ public class CharacterController : MonoBehaviour
     private int locomotionPivotLTransId = 0;
     private int locomotionPivotRTransId = 0;
     private bool jump = false;
+    private bool interacting = false;
 
     void Awake() {
         animator = GetComponent<Animator>();
@@ -135,6 +138,7 @@ public class CharacterController : MonoBehaviour
 
     void FixedUpdate()
     {
+        interactCollider.enabled = interacting;
         if (Mathf.Abs(horizontal) < 0.001f)
         {
             rigidBody.angularVelocity = Vector3.zero;
@@ -226,5 +230,10 @@ public class CharacterController : MonoBehaviour
         Vector2 axis = ctx.ReadValue<Vector2>();
         horizontal = axis.x;
         vertical = axis.y;
+    }
+
+    public void OnInteract(InputAction.CallbackContext ctx)
+    {
+        interacting = ctx.ReadValueAsButton();
     }
 }
