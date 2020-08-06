@@ -126,6 +126,12 @@ public class ThirdPersonCamera : MonoBehaviour {
         transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.identity, Time.deltaTime);
     }
 
+    public void ResetPosition()
+    {
+        transform.position = character.cameraTarget.position;
+        transform.rotation = character.cameraTarget.rotation;
+    }
+
     public void OnPlayer(InputAction.CallbackContext ctx) {
         ResetCamera();
     }

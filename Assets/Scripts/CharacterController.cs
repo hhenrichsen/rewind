@@ -12,12 +12,12 @@ public class CharacterController : MonoBehaviour
     [SerializeField]
     private float DirectionDampTime = .25f;
     [SerializeField]
-    private float directionSpeed = 7.0f;
+    private float directionSpeed = 1.5f;
 
     [SerializeField]
     private ThirdPersonCamera gamecam;
     [SerializeField]
-    private float rotationDegreesPerSecond;
+    private float rotationDegreesPerSecond = 120f;
     [SerializeField]
     private float speedDamp = 0.05f;
     [SerializeField]
@@ -62,7 +62,7 @@ public class CharacterController : MonoBehaviour
 
     public float LocomotionThreshold {
         get {
-            return 0.7f;
+            return 0.2f;
         }
     }
 
@@ -135,6 +135,10 @@ public class CharacterController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (Mathf.Abs(horizontal) < 0.001f)
+        {
+            rigidBody.angularVelocity = Vector3.zero;
+        }
 
         if (IsInLocomotion() && (vertical > 0.001f || vertical < -0.001f) && ((direction >= 0 && horizontal >= 0.001f) || (direction < 0 && horizontal < 0.001f)))
         {
@@ -156,23 +160,27 @@ public class CharacterController : MonoBehaviour
         }
     }
 
-    void TranslateStickToWorldspace(Transform root, Transform camera, ref float directionOut, ref float speedOut, ref float angleOut, bool isPivoting) {
+    void TranslateStickToWorldspace(Transform root, Transform camera, ref float directionOut, ref float speedOut, ref float angleOut, bool isPivoting)
+    {
         Vector3 rootDirection = root.forward;
+
         Vector3 stickDirection = new Vector3(horizontal, 0, vertical);
 
         speedOut = stickDirection.sqrMagnitude;
 
+        // Get camera rotation
         Vector3 CameraDirection = camera.forward;
-        CameraDirection.y = 0.0f;
+        CameraDirection.y = 0.0f; // kill Y
+        Quaternion referentialShift = Quaternion.FromToRotation(Vector3.forward, Vector3.Normalize(CameraDirection));
 
-        Vector3 moveDirection = camera.right * horizontal + CameraDirection * vertical;
+        // Convert joystick input in Worldspace coordinates
+        Vector3 moveDirection = referentialShift * stickDirection;
         Vector3 axisSign = Vector3.Cross(moveDirection, rootDirection);
 
-        float angleRootToMove = Vector3.Angle(rootDirection, moveDirection) * axisSign.y >= 0 ? -1f : 1f;
-
-        if(!isPivoting)
+        float angleRootToMove = Vector3.Angle(rootDirection, moveDirection) * (axisSign.y >= 0 ? -1f : 1f);
+        if (!isPivoting)
         {
-            directionOut = angleRootToMove;
+            angleOut = angleRootToMove;
         }
         angleRootToMove /= 180f;
 

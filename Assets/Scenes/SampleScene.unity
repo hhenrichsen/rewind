@@ -462,7 +462,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-79592
+  m_Name: pb_Mesh16514
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1214,7 +1214,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-86304
+  m_Name: pb_Mesh16636
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1378,7 +1378,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-104614
+  m_Name: pb_Mesh16652
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2022,9 +2022,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   DirectionDampTime: 0.15
-  directionSpeed: 18
+  directionSpeed: 1.5
   gamecam: {fileID: 963194229}
   rotationDegreesPerSecond: 180
+  speedDamp: 0.1
+  jumpMultiplier: 0.1
+  capCollider: {fileID: 0}
+  jumpDist: 1
   cameraTarget: {fileID: 362037322}
 --- !u!1001 &642280441
 PrefabInstance:
@@ -2186,7 +2190,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-133586
+  m_Name: pb_Mesh-1284
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2411,7 +2415,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-133488
+  m_Name: pb_Mesh-3118
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2676,7 +2680,9 @@ MonoBehaviour:
   followTransform: {fileID: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   camSmoothDampTime: 0.1
+  lookDirectionDampTime: 0.1
   firstPersonLookSpeed: 1
+  firstPersonRotationSpeed: 90
   firstPersonXAxisClamp: {x: -45, y: 45}
   character: {fileID: 505316418}
 --- !u!114 &963194230
@@ -3014,7 +3020,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-175524
+  m_Name: pb_Mesh16486
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3231,7 +3237,19 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 505316418}
+        m_TargetAssemblyTypeName: CharacterController, Assembly-CSharp
+        m_MethodName: Jump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 01031bcd-5718-4abd-8656-c9dd954dd025
     m_ActionName: Player/Jump[/Keyboard/space]
   - m_PersistentCalls:
@@ -3302,7 +3320,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 963194229}
         m_TargetAssemblyTypeName: ThirdPersonCamera, Assembly-CSharp
-        m_MethodName: ResetPosition
+        m_MethodName: ResetCamera
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5590,7 +5608,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-133402
+  m_Name: pb_Mesh-3090
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
