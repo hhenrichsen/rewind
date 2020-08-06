@@ -71,6 +71,7 @@ public class ThirdPersonCamera : MonoBehaviour {
             new GameObject().transform,
             character.transform
         );
+        ResetPosition();
     }
 
     public void LateUpdate() {

@@ -3,7 +3,11 @@ guid: 4a5f75a0edd4faa4dbbd9b4924be10e3
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - cameraTarget: {instanceID: 0}
+  - spawnUpdated: {instanceID: 0}
+  - time: {instanceID: 0}
+  - increment: {fileID: 11400000, guid: 3c1dcc34315f52846a87f62808a5419c, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -14,6 +14,17 @@ public class CameraManager : MonoBehaviour {
         Player = true;
     }
 
+    public void Pause()
+    {
+        playerInput.SwitchCurrentActionMap("Paused");
+        Time.timeScale = 0.0f;
+    }
+
+    public void Unpause()
+    {
+        playerInput.SwitchCurrentActionMap("Player");
+        Time.timeScale = 1.0f;
+    }
 
     public void ToCamera(InputAction.CallbackContext ctx) {
         playerInput.SwitchCurrentActionMap("Camera");

@@ -3,7 +3,13 @@ guid: c995da9c7b0ead442a0d1ae221e432ea
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - spawnTime: {fileID: 11400000, guid: 359c34155f666124bb96c7db077ffacc, type: 2}
+  - effectIntensity: {fileID: 11400000, guid: 45cd88fab670b144a91beb05059bb1f8, type: 2}
+  - timeRemaining: {fileID: 11400000, guid: 8fee014f15a3da94989b9585b464a3a9, type: 2}
+  - defaultSpawn: {instanceID: 0}
+  - player: {instanceID: 0}
+  - camera: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
