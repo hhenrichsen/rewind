@@ -1,0 +1,3 @@
+Glitch Shader - https://github.com/kejiro/KinoGlitch by Keijiro Takahashi
+Third Person - John Mac
+ScriptableObject Event System - https://github.com/NeoDragonCP/Unity-ScriptableObjects-Game-Events- by NeoDragonCP
