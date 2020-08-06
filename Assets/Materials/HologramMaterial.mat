@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: HologramMaterial
   m_Shader: {fileID: 4800000, guid: 714e4bbd4984c7342883cb857f9974ca, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA _GLITCH_ON _GLOW_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -61,27 +61,27 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _Alpha: 1
-    - _Brightness: 3.76
+    - _Brightness: 1.08
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _FlickerSpeed: 7
-    - _Fold: 1
-    - _GlitchIntensity: 0
-    - _GlitchSpeed: 5.7
+    - _FlickerSpeed: 41.1
+    - _Fold: 3
+    - _GlitchIntensity: 0.2
+    - _GlitchSpeed: 5
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _GlowSpeed: 2.6
-    - _GlowTiling: 0.294
+    - _GlowSpeed: 6
+    - _GlowTiling: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RimPower: 3.48
-    - _ScanSpeed: 2
-    - _ScanTiling: 1.07
+    - _RimPower: 3.53
+    - _ScanSpeed: 0.32
+    - _ScanTiling: 10
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -89,8 +89,8 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Direction: {r: 0, g: 1, b: 0, a: 0}
+    - _Direction: {r: 1, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _MainColor: {r: 1, g: 1, b: 1, a: 1}
+    - _MainColor: {r: 0.6509804, g: 0.6509804, b: 0.6509804, a: 0.02745098}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
