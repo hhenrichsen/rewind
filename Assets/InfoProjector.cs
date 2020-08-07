@@ -1,12 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InfoProjector : MonoBehaviour
 {
-    public string Title;
-#if UNITY_EDITOR
-    [Multiline]
-#endif
-    public string Description = "";
+    public Dialog dialog;
+    private UIManager manager;
+
+    public void Awake()
+    {
+        manager = GameObject.FindGameObjectWithTag("GameController").GetComponent<UIManager>();
+    }
+
+    public void Respond()
+    {
+        manager.ShowDialog(dialog);
+    }
 }

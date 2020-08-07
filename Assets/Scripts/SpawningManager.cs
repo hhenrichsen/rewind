@@ -13,6 +13,7 @@ public class SpawningManager : MonoBehaviour
     public SpawnPosition defaultSpawn;
     public GameObject player;
     public GameObject camera;
+    public GameEvent spawnUpdated;
 
 
     private float nextSpawn;
@@ -24,6 +25,13 @@ public class SpawningManager : MonoBehaviour
     {
         spawnTime.SetValue(initialSpawnTime.Value);
         BackToSpawn();
+        Invoke("BackToSpawn", spawnTime.Value);
+    }
+
+    public void Refresh()
+    {
+        nextSpawn = Time.time + spawnTime.Value;
+        CancelInvoke();
         Invoke("BackToSpawn", spawnTime.Value);
     }
 

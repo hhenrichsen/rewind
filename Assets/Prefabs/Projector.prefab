@@ -132,7 +132,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5832681407892970672}
   m_LocalRotation: {x: -0, y: 1, z: 0.00000008146035, w: 0.000000059604645}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8033734172094254586}
@@ -250,8 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8044fc9ca6894f24891972522802cc0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Title: Interacting
-  Description: Congrats! You've just interacted with something!
+  dialog: {fileID: 0}
 --- !u!114 &4282253937484373718
 MonoBehaviour:
   m_ObjectHideFlags: 0

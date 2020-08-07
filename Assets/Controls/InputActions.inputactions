@@ -325,7 +325,7 @@
                     "id": "5a10151e-e95f-4317-af5f-98d714535aa8",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press"
                 }
             ],
             "bindings": [
@@ -358,6 +358,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
+                    "action": "Acknowledge",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e0cc5934-4386-4d0a-8d59-22858907c4c9",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
                     "action": "Acknowledge",
                     "isComposite": false,
                     "isPartOfComposite": false
