@@ -64,7 +64,7 @@ public class CharacterController : MonoBehaviour
 
     public float LocomotionThreshold {
         get {
-            return 0.2f;
+            return 0.4f;
         }
     }
 

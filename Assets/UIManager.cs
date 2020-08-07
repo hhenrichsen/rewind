@@ -19,6 +19,7 @@ public class UIManager : MonoBehaviour
     private bool toggle;
     private bool interacting;
     private Dialog displayDialog;
+    public Dialog startDialog;
 
     public void ShowDialog(Dialog dialog)
     {
@@ -26,6 +27,11 @@ public class UIManager : MonoBehaviour
         displayDialog = dialog;
         toggle = true;
         interacting = true;
+    }
+
+    public void Start()
+    {
+        ShowDialog(startDialog);
     }
 
     public void Update()

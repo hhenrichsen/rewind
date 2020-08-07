@@ -43,6 +43,8 @@ public class ThirdPersonCamera : MonoBehaviour {
     private Vector2 firstPersonXAxisClamp;
     [SerializeField]
     private CharacterController character;
+    [SerializeField]
+    private Dialog startingDialog;
 
     // Positioning
     private Vector3 velocityCamSmooth = Vector3.zero;
@@ -72,10 +74,11 @@ public class ThirdPersonCamera : MonoBehaviour {
             character.transform
         );
         ResetPosition();
+        currentLookDirection = followTransform.forward;
     }
 
     public void LateUpdate() {
-        Vector3 characterOffset = followTransform.position + offset;
+        Vector3 characterOffset = followTransform.position + (distanceUp * followTransform.up);
         Vector3 lookAt = characterOffset;
         targetPosition = Vector3.zero;
 
@@ -91,7 +94,7 @@ public class ThirdPersonCamera : MonoBehaviour {
             
                 currentLookDirection = Vector3.SmoothDamp(currentLookDirection, lookDirection, ref velocityLookDirection, lookDirectionDampTime);
             }
-
+            // TODO: Fix camera bug. It's right here.
             targetPosition = characterOffset + followTransform.up * distanceUp - Vector3.Normalize(currentLookDirection) * distanceAway;
             lookDirection = characterOffset;
             Debug.DrawLine(followTransform.position, targetPosition, Color.magenta);

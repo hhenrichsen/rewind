@@ -11,6 +11,6 @@ public class Rotator : MonoBehaviour
     void Update()
     {
         Vector3 oldRotation = this.transform.rotation.eulerAngles;
-        this.transform.rotation = Quaternion.Euler(oldRotation + rotationAmount);
+        this.transform.rotation = Quaternion.Euler(oldRotation + rotationAmount * Time.deltaTime);
     }
 }

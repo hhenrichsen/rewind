@@ -21,8 +21,8 @@ public class MoveResponse : MonoBehaviour {
 
     void Update() {
         if (move) {
-            if(movementCompleted < 1) {
-                movementCompleted += time * Time.deltaTime;
+            if(movementCompleted < time) {
+                movementCompleted += Time.deltaTime;
                 this.transform.position = Vector3.MoveTowards(this.transform.position, this.goal, movementCompleted);
             }
             else if(this.transform.position != this.goal) {

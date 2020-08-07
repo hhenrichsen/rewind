@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08b938f565313bb499e2425df1707487, type: 3}
-  m_Name: Gamejam
+  m_Name: FirstPersonCamera
   m_EditorClassIdentifier: 
-  Title: Brackeys Gamejam 2020.2
-  Description: This game was made for the Brackeys game jam. The theme was "Rewind".
-  icon: {fileID: 21300000, guid: ea26d6b8773a62e43b9aa0e6b35b961f, type: 3}
+  Title: Observation
+  Description: Use Q or the Y button to look around. Many COR::PS employees forget
+    to observe their circumstances. Please examine your behavior.
+  icon: {fileID: 21300000, guid: 056a6b165003c2f44b94bfba7dbe905c, type: 3}
