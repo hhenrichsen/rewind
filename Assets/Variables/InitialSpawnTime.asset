@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: InitialSpawnTime
   m_EditorClassIdentifier: 
   Description: 
-  Value: 200
+  Value: 10
