@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Start
   m_EditorClassIdentifier: 
   Title: COR::PS Anomaly Monitor
-  Description: You do not belong here.
+  Description: You do not belong here. Please leave this facility through the bore
+    you came through.
   icon: {fileID: 21300000, guid: db8afb97af229cf4abce3027a9c4f6cb, type: 3}

@@ -20,6 +20,14 @@ public class UIManager : MonoBehaviour
     private bool interacting;
     private Dialog displayDialog;
     public Dialog startDialog;
+    public Dialog thanksDialog;
+    public Dialog victoryDialog;
+    public Image fade;
+    private bool fading;
+    private float alpha = 0;
+    public float fadeSpeed;
+    private bool ended;
+    private bool quit;
 
     public void ShowDialog(Dialog dialog)
     {
@@ -32,6 +40,12 @@ public class UIManager : MonoBehaviour
     public void Start()
     {
         ShowDialog(startDialog);
+        imageElement.transform.SetAsLastSibling();
+    }
+
+    public void FadeToBlack()
+    {
+        fading = true;
     }
 
     public void Update()
@@ -58,10 +72,37 @@ public class UIManager : MonoBehaviour
             interacting = !interacting;
             toggle = false;
         }
+        if (fading)
+        {
+            if (alpha < 1f)
+            {
+                alpha += fadeSpeed * Time.unscaledDeltaTime;
+            }
+            else
+            {
+                alpha = 1f;
+                Time.timeScale = 0f;
+                fading = false;
+                ShowDialog(victoryDialog);
+                ended = true;
+            }
+            Color color = fade.color;
+            color.a = alpha;
+            fade.color = color;
+        }
     }
+    
 
     public void AcknowledgeDialog()
     {
         toggle = true;
+        if (ended)
+        {
+            ShowDialog(thanksDialog);
+        }
+        if (quit)
+        {
+            Application.Quit();
+        }
     }
 }
